@@ -1,0 +1,8 @@
+ERROR_ALREADY_EXISTS 901
+The function has succeeded, but the error returned by GetLastError indicates that OPEN_ALWAYS or CREATE_ALWAYS was specified. The database file existed before the call to this function.
+
+ERROR_DUP_NAME 902
+A database already exists with the specified name.
+
+ERROR_DATA_NOT_FOUND 903
+The tracking tables could not be found.

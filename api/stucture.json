@@ -1,0 +1,7 @@
+// User View
+
+{
+  "type":"Add/Del/View/Modify",
+  "payload": {"Email":"x.ty@gmail.com","Password":"XXXXXX","Username":"xty"},
+  "Model": "Userview/Dataview"
+}

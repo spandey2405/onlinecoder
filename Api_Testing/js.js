@@ -57,7 +57,7 @@ $('#myView1').click (function () {
     $("#cont-2-1").addClass("hide");
     var RequestData = {
         "type":"PUT",
-        "payloads": {"Email":"x.ty@gmail.com","Password":"XXXXXX","Username":"xty"},
+        "payloads": {"Email":"","Password":"","Username":""},
         "request_id": 123435236
     };
     RequestData = JSON.stringify(RequestData, undefined, 2)
@@ -74,11 +74,30 @@ $('#myView2').click (function () {
     $("#cont-2-1").addClass("hide");
     var RequestData = {
         "type":"GET",
-        "payloads": {"Token":"123456789"},
+        "payloads": {"Token":""},
         "request_id": 123435236
     };
     RequestData = JSON.stringify(RequestData, undefined, 2)
     var Url = "http://localhost/onlinecoder/api/views/userview.php";
+
+    $('#cont-1-1').val(RequestData);
+    $('#url').val(Url);
+});
+
+$('#myView3').click (function () {
+    $("#cont-2").removeClass("activeLink");
+    $("#cont-1-1").removeClass("hide")
+    $('#cont-2').addClass("activeLink");
+    $("#cont-2-1").addClass("hide");
+    var RequestData = {
+        "type": "PUT",
+        "payloads": {
+            "Email": "",
+            "Password": ""
+        }
+    };
+    RequestData = JSON.stringify(RequestData, undefined, 2)
+    var Url = "http://localhost/onlinecoder/api/views/tokenview.php";
 
     $('#cont-1-1').val(RequestData);
     $('#url').val(Url);

@@ -27,9 +27,18 @@ function HandleUserRequest($Request) {
                 return $Response;
 
             case "GET":
-                $Response["SUCCESS"] = "True";
                 $Response["Payloads"] = GetUser($RequestData);
-                $Response["STATUS CODE"] = 200;
+
+                if($Response["Payloads"] == ERROR_DATA_NOT_FOUND ){
+                    $Response["STATUS CODE"] = ERROR_DATA_NOT_FOUND;
+                    $Response["SUCCESS"] = "False";
+                    $Response['Payloads'] = "Authentication Error";
+                }
+                else {
+                    $Response["SUCCESS"] = "True";
+                    $Response["STATUS CODE"] = 200;
+                }
+
                 return $Response;
 
             default:

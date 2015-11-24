@@ -44,10 +44,12 @@ class DatabaseModel {
 
     public function update($query) {
         $connect = $this->init();
-        if (mysqli_query($connect, $query)) {
-            return true;
+        if(mysqli_query($connect, $query)) {
+            return $query;
         }
-        return ERROR_DATA_NOT_FOUND;
+        else {
+        return "checking2";
+        }
     }
 }
 ?>

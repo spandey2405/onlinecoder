@@ -17,6 +17,7 @@
 <div class="my-box">
     <a href="javascript:;" id="myView1">User Put</a>
     <a href="javascript:;" id="myView2">User Get</a>
+    <a href="javascript:;" id="myView3">Get Token</a>
 </div>
 <div class="tab-box">
     <a href="javascript:;" class="tabLink activeLink" id="cont-1">Request</a>

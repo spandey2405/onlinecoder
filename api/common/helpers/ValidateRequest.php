@@ -25,4 +25,20 @@ function validate_userview_request($Request) {
     }
 
 }
+
+function validate_token_request($Request) {
+    include '../common/helpers/Validator/TokenValidator.php';
+
+    if(isset($Request['type'])){
+        if($Request['type'] == "PUT") {
+            return GetTokenValidateRequest($Request['payloads']);
+        }
+        else {
+            return "False";
+        }
+    }
+    else {
+        return "False";
+    }
+}
 ?>

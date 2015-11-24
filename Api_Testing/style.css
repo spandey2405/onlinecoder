@@ -1,0 +1,65 @@
+body {
+    margin-left:50px;
+}
+.url {
+    width : 630px;
+    height:30px;
+    text-indent: 10px;
+
+}
+.btn {
+    height:30px;
+    width:100px;
+}
+#type {
+    height:30px;
+    width:70px;
+}
+.tab-box {
+    margin-top:20px;
+
+    width:800px;
+    padding-bottom:5px;
+}
+.tab-box a  {
+    text-decoration:none;
+    background-color: #A9E2F3;
+    color:#084B8A;
+    border-bottom: 0;
+    padding: 6px 15px;
+}
+
+.tab-box a.activeLink {
+    background-color: #084B8A;
+    color:#A9E2F3;
+    border-bottom: 0;
+    padding: 6px 15px;
+}
+
+.my-box {
+    margin-top:20px;
+
+    width:800px;
+    padding-bottom:5px;
+}
+.my-box a:hover {
+    background-color: #084B8A;
+    color:#A9E2F3;
+    border-bottom: 0;
+    padding: 6px 15px;
+}
+.my-box a  {
+    text-decoration:none;
+    background-color: #A9E2F3;
+    color:#084B8A;
+    border-bottom: 0;
+    padding: 6px 15px;
+}
+.tabcontent { overflow-y:scroll;resize: none;padding:10px;border: 1px solid #ddd; border-top: 0; width:800px;height:200px; background: #F2F2F2;}
+.hide { display: none;}
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }

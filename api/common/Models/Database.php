@@ -9,8 +9,8 @@
 class DatabaseModel {
 
     private function init() {
-        require_once '../config/config.php';
-        require_once '../config/ErrorCodes.php';
+        require_once '../common/config/config.php';
+        require_once '../common/config/ErrorCodes.php';
         $conf = db_configration();
         $conn = mysqli_connect($conf['servername'], $conf['username'], $conf['password'], $conf['dbname']);
         return $conn;
@@ -37,7 +37,7 @@ class DatabaseModel {
     public function insert($query) {
         $connect = $this->init();
         if (mysqli_query($connect, $query)) {
-            return true;
+            return SUCCESS;
         }
         return ERROR_DUP_NAME;
     }

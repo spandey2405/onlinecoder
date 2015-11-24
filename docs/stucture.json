@@ -1,0 +1,14 @@
+// Add User
+//http://localhost/onlinecoder/api/views/userview.php
+{
+  "type":"PUT",
+  "payloads": {"Email":"x.ty@gmail.com","Password":"XXXXXX","Username":"xty"},
+  "request_id": 123435236
+},
+
+// view User
+
+{
+  "type":"GET",
+  "payloads": {"Token":"123456789"}
+},

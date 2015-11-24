@@ -17,4 +17,10 @@ define ('DATA_EXISTS',403,True);
 define ('ERROR_ALREADY_EXISTS', 901);
 define ('ERROR_DUP_NAME', 902);
 define ('ERROR_DATA_NOT_FOUND', 903);
+
+define ('TYPE_NOT_SPECIFIED', 801);
+define ('PAYLOAD_MISSING', 802);
+
+
+
 ?>

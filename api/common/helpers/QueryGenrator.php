@@ -9,9 +9,9 @@
 class QueryGenrator {
 
     private function init() {
-        require_once 'QueryGenrator/SelectQueryGenrator.php';
-        require_once 'QueryGenrator/UpdateQueryGenrator.php';
-        require_once 'QueryGenrator/InsertQueryGenrator.php';
+        require_once '../common/helpers/QueryGenrator/SelectQueryGenrator.php';
+        require_once '../common/helpers/QueryGenrator/UpdateQueryGenrator.php';
+        require_once '../common/helpers/QueryGenrator/InsertQueryGenrator.php';
     }
 
     public function select($Table, $Data, $Conditons) {

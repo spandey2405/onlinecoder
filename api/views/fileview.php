@@ -7,9 +7,9 @@
  */
 
 if($_POST) {
-    include '../common/lib/UserView.php';
+    include '../common/lib/FileView.php';
     $Request = $_POST;
-    $response = HandleUserRequest($Request);
+    $response = HandleFileRequest($Request);
 
     print (json_encode($response));
 }

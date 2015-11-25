@@ -23,6 +23,7 @@ function HandleUserRequest($Request) {
                 if($Response["STATUS CODE"] == ERROR_DUP_NAME )
                     $Response["SUCCESS"] = "False";
                 else
+                    $Response["Payloads"] = "User Added Successfully";
                     $Response["SUCCESS"] = "True";
                 return $Response;
 
@@ -48,6 +49,7 @@ function HandleUserRequest($Request) {
     else {
         $Response["SUCCESS"] = "False";
         $Response["STATUS CODE"] = PAYLOAD_MISSING;
+        $Response["Payloads"] = "Payloads Missing";
         return $Response;
     }
 

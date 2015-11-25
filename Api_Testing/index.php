@@ -18,6 +18,10 @@
     <a href="javascript:;" id="myView1">User Put</a>
     <a href="javascript:;" id="myView2">User Get</a>
     <a href="javascript:;" id="myView3">Get Token</a>
+    <a href="javascript:;" id="myView4">View File</a>
+    <a href="javascript:;" id="myView5">Add File</a>
+    <a href="javascript:;" id="myView6">Mark Fav</a>
+    <a href="javascript:;" id="myView7">Rename</a>
 </div>
 <div class="tab-box">
     <a href="javascript:;" class="tabLink activeLink" id="cont-1">Request</a>

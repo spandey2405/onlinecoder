@@ -12,3 +12,13 @@
   "type":"GET",
   "payloads": {"Token":"123456789"}
 },
+
+{
+"type": "PUT",
+"payloads": {
+"Token": "66b826c4dc12f1e011732fd7c986950b",
+"File": "123456789.php",
+"Type": "PHP"
+},
+"request_id": 123435236
+}

@@ -13,5 +13,19 @@ if($_POST) {
 
     print (json_encode($response));
 }
+else if ($_GET) {
+    $Response['Status'] = 401;
+    $Response['Success'] = "False";
+    $Response['Message'] = "Method Get Not Allowed";
+    print (json_encode($Response));
+}
+
+else {
+    $Response['Status'] = 401;
+    $Response['Success'] = "False";
+    $Response['Message'] = "Not Authorized";
+    print (json_encode($Response));
+}
 ?>
+
 

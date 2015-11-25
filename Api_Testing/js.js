@@ -25,29 +25,12 @@ $('#Submit').click (function () {
             $("#cont-2-1").removeClass("hide")
             $('#cont-2').addClass("activeLink");
             $("#cont-1-1").addClass("hide");
-            data = data.replace('[','');
-            data = data.replace(']','');
+            //data = data.replace('[{','{');
+            //data = data.replace('}]','}');
             data = JSON.parse(data);
             data = JSON.stringify(data, undefined, 2)
             $('#cont-2-1').html(data);
         });
-});
-
-$('#myView1').click (function () {
-    $("#cont-2").removeClass("activeLink");
-    $("#cont-1-1").removeClass("hide")
-    $('#cont-2').addClass("activeLink");
-    $("#cont-2-1").addClass("hide");
-    var RequestData = {
-        "type":"PUT",
-        "payloads": {"Email":"x.ty@gmail.com","Password":"XXXXXX","Username":"xty"},
-        "request_id": 123435236
-    };
-    RequestData = JSON.stringify(RequestData, undefined, 2)
-    var Url = "http://localhost/onlinecoder/api/views/userview.php";
-
-    $('#cont-1-1').val(RequestData);
-    $('#url').val(Url);
 });
 
 $('#myView1').click (function () {
@@ -102,5 +85,90 @@ $('#myView3').click (function () {
     $('#cont-1-1').val(RequestData);
     $('#url').val(Url);
 });
+
+$('#myView4').click (function () {
+    $("#cont-2").removeClass("activeLink");
+    $("#cont-1-1").removeClass("hide")
+    $('#cont-2').addClass("activeLink");
+    $("#cont-2-1").addClass("hide");
+    var RequestData = {
+        "type":"GET",
+        "payloads": {"Token":""},
+        "request_id": 123435236
+    };
+    RequestData = JSON.stringify(RequestData, undefined, 2)
+    var Url = "http://localhost/onlinecoder/api/views/fileview.php";
+
+    $('#cont-1-1').val(RequestData);
+    $('#url').val(Url);
+});
+
+$('#myView5').click (function () {
+    $("#cont-2").removeClass("activeLink");
+    $("#cont-1-1").removeClass("hide")
+    $('#cont-2').addClass("activeLink");
+    $("#cont-2-1").addClass("hide");
+    var Filename = $.now()+".php";
+    var RequestData = {
+        "type":"PUT",
+        "payloads": {
+            "Token":"",
+            "File":Filename,
+            "Type":"PHP"
+        },
+        "request_id": 123435236
+    };
+    RequestData = JSON.stringify(RequestData, undefined, 2)
+    var Url = "http://localhost/onlinecoder/api/views/fileview.php";
+
+    $('#cont-1-1').val(RequestData);
+    $('#url').val(Url);
+});
+
+
+$('#myView6').click (function () {
+    $("#cont-2").removeClass("activeLink");
+    $("#cont-1-1").removeClass("hide")
+    $('#cont-2').addClass("activeLink");
+    $("#cont-2-1").addClass("hide");
+    var Filename = $.now()+".php";
+    var RequestData = {
+        "type": "FAV",
+        "payloads": {
+            "Token": "",
+            "File": "",
+            "Fav": 1
+        },
+        "request_id": 123435236
+    };
+    RequestData = JSON.stringify(RequestData, undefined, 2)
+    var Url = "http://localhost/onlinecoder/api/views/fileview.php";
+
+    $('#cont-1-1').val(RequestData);
+    $('#url').val(Url);
+});
+
+$('#myView7').click (function () {
+    $("#cont-2").removeClass("activeLink");
+    $("#cont-1-1").removeClass("hide")
+    $('#cont-2').addClass("activeLink");
+    $("#cont-2-1").addClass("hide");
+    var Filename = $.now()+".php";
+    var RequestData = {
+        "type": "RENAME",
+        "payloads": {
+            "Token": "",
+            "File": "",
+            "Filename": ""
+        },
+        "request_id": 123435236
+    };
+    RequestData = JSON.stringify(RequestData, undefined, 2)
+    var Url = "http://localhost/onlinecoder/api/views/fileview.php";
+
+    $('#cont-1-1').val(RequestData);
+    $('#url').val(Url);
+});
+
 
 

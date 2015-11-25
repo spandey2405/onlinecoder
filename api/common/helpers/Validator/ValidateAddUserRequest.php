@@ -11,7 +11,6 @@ function AddUserValidateRequest($Payloads) {
     if(!$Payloads ['Email'] || !$Payloads ['Password'] || !$Payloads ['Email'] ) {
         Return "False" ;
     }
-
     Return "True";
 }
 

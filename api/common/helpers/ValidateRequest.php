@@ -30,9 +30,42 @@ function validate_token_request($Request) {
     include '../common/helpers/Validator/TokenValidator.php';
 
     if(isset($Request['type'])){
+
         if($Request['type'] == "PUT") {
             return GetTokenValidateRequest($Request['payloads']);
         }
+        else {
+            return "False";
+        }
+    }
+    else {
+        return "False";
+    }
+}
+
+function validate_file_request($Request) {
+    include '../common/helpers/Validator/AddFileValidator.php';
+    include '../common/helpers/Validator/FileGetValidator.php';
+    include '../common/helpers/Validator/FileFavValidator.php';
+    include '../common/helpers/Validator/FileRenameValidator.php';
+
+    if(isset($Request['type'])){
+        if($Request['type'] == "PUT") {
+            return FileAddRequestValidator($Request['payloads']);
+        }
+
+        else if($Request['type'] == "GET") {
+            return FileGetRequestValidator($Request['payloads']);
+        }
+
+        else if($Request['type'] == "FAV") {
+            return FileFavRequestValidator($Request['payloads']);
+        }
+
+        else if($Request['type'] == "RENAME") {
+            return FileRenameRequestValidator($Request['payloads']);
+        }
+
         else {
             return "False";
         }

@@ -11,9 +11,12 @@
 
     <script>
         function test() {
-            var data = '{"SUCCESS":"True","Payloads":{"id":"29","Email":"scoder91@gmail.com","Username":"Scoder91","Password":"Siddyking","Joined":"0","AccessToken":"123456789"},"STATUS CODE":200}';
-            var data = JSON.parse(data);
-            document.write(data['Payloads']['Email']);
+            var data = '{"Payloads":[{"id":"2","Username":"Scoder91","File":"123456789.php","Filename":"","Fav":"0","Type":"PHP","Time":"1448427059"},{"id":"4","Username":"Scoder91","File":"12345678dasdad9.php","Filename":"","Fav":"0","Type":"PHP","Time":"1448427285"}],"SUCCESS":"True","STATUS CODE":200}';
+//            data = data.replace('[','');
+//            data = data.replace(']','');
+            data = JSON.parse(data);
+            data = JSON.stringify(data, undefined, 2)
+            document.write(data['Payloads']);
         }
     </script>
 

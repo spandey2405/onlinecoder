@@ -15,6 +15,9 @@ function AddFile($Data) {
 
     $Query = $QueryGen->insert($table, $Data);
     $DBEntry = $DB->insert($Query);
+    if ($DBEntry == 200) {
+        return 201;
+    }
     return $DBEntry;
 }
 ?>

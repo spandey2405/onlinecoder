@@ -45,10 +45,10 @@ class DatabaseModel {
     public function update($query) {
         $connect = $this->init();
         if(mysqli_query($connect, $query)) {
-            return "Data Successfully Updated";
+            return DATA_SUCCESSFULLY_UPDATED;
         }
         else {
-        return "False";
+        return COULD_NOT_UPDATE;
         }
     }
 }

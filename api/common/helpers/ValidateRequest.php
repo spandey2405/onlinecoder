@@ -74,4 +74,14 @@ function validate_file_request($Request) {
         return "False";
     }
 }
+
+function validate_Username_request($Request) {
+
+    if(isset($Request['Username'])){
+        return "True";
+    }
+    else {
+        return "False";
+    }
+}
 ?>

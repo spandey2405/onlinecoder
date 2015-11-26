@@ -13,7 +13,17 @@ function GetFile($Username) {
     $QueryGen = new QueryGenrator();
     $DB = new DatabaseModel();
     $Query = $QueryGen->select($table,$Data="None",$Condition="WHERE `Username` = '$Username'");
-    $DBEntry = $DB->select($Query);
-    return $DBEntry;
+    $GetResponse = $DB->select($Query);
+    if($GetResponse != 903) {
+        $Response["STATUS"] = "True";
+        $Response["STATUS CODE"] = 200;
+        $Response['Payloads'] = $GetResponse;
+    }
+    else {
+        $Response["STATUS"] = "True";
+        $Response["STATUS CODE"] = 903;
+        $Response["Message"] = "No Data Found";
+    }
+    return $Response;
 }
 ?>

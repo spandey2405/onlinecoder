@@ -14,92 +14,57 @@ function HandleFileRequest($Request) {
     include '../common/controller/file_get.php';
     include '../common/controller/add_fav.php';
     include '../common/controller/Rename.php';
+
     if(validate_file_request($Request)=="True") {
 
-        $Type = $Request["type"];
-        $Data = $Request["payloads"];
-        $Username = GetUser($Data);
+        $UserDetail = GetUser($Request["payloads"]);
+        if (isset($UserDetail[0]['Username'])){
 
+            $RequestData['Username'] = $UserDetail[0]['Username'];
+            $RequestData['Time'] = time();
 
-        if (isset($Username[0]['Username'])){
-            $username = $Username[0]['Username'];
-            $RequestData['Username'] = $username;
-            switch ($Type) {
-
+            switch ($Request["type"]) {
                 case "PUT":
+                    $RequestData['File'] = $Request['payloads']['File'];
+                    $RequestData['Filename'] = $Request['payloads']['File'];
+                    $RequestData['Type'] = $Request['payloads']['Type'];
 
-                    $RequestData['File'] = $Data['File'];
-                    $RequestData['Filename'] = $Data['File'];
-                    $RequestData['Type'] = $Data['Type'];
-                    $RequestData['Time'] = time();
-                    $Response["STATUS CODE"] = AddFile($RequestData);
-                    if($Response["STATUS CODE"] == ERROR_DUP_NAME ){
-                        $Response["SUCCESS"] = "False";
-                        $Response["Message"] = "Something Went Wrong";
-                    }
-                    else {
-                        $Response["SUCCESS"] = "True";
-                        $Response["Message"] = "File Added Successfully";
-                    }
-                    return $Response;
-
+                    $Res = AddFile($RequestData);
+                    $Response = ReturnResponse($Res);
+                    break;
 
                 case "GET":
-
-                    $Response["Payloads"] = GetFile($username);
-                    if($Response["Payloads"] == ERROR_DATA_NOT_FOUND ){
-                        $Response["STATUS CODE"] = ERROR_DATA_NOT_FOUND;
-                        $Response["SUCCESS"] = "False";
-                        $Response['Payloads'] = "No Files To Display";
-                    }
-                    else {
-                        $Response["SUCCESS"] = "True";
-                        $Response["STATUS CODE"] = 200;
-                    }
-                    return $Response;
-
+                    $Response = GetFile($RequestData['Username']);
+                    break;
 
                 case "FAV":
-                    $FavData['File'] = $Data['File'];
-                    $FavData['Username'] = $username;
-                    $FavData['Fav'] = $Data['Fav'];
-                    $Response["Payloads"] = AddFav($FavData);
-                    if($Response["Payloads"] == ERROR_DATA_NOT_FOUND ){
-                        $Response["STATUS CODE"] = ERROR_DATA_NOT_FOUND;
-                        $Response["SUCCESS"] = "False";
-                        $Response['Payloads'] = "Authentication Error";
-                    }
-                    else {
-                        $Response["SUCCESS"] = "True";
-                        $Response["STATUS CODE"] = 200;
-                    }
-                    return $Response;
+                    $RequestData['File'] = $Request['payloads']['File'];
+                    $RequestData['Fav'] = $Request['payloads']['Fav'];
+                    $Res = AddFav($RequestData);
+                    $Response = ReturnResponse($Res);
+                    break;
 
                 case "RENAME":
-                    $FavData['File'] = $Data['File'];
-                    $FavData['Username'] = $username;
-                    $FavData['Filename'] = $Data['Filename'];
-                    $Response["Payloads"] = RenameFile($FavData);
-                    if($Response["Payloads"] == ERROR_DATA_NOT_FOUND ){
-                        $Response["STATUS CODE"] = ERROR_DATA_NOT_FOUND;
-                        $Response["SUCCESS"] = "False";
-                        $Response['Payloads'] = "Authentication Error";
-                    }
-                    else {
-                        $Response["SUCCESS"] = "True";
-                        $Response["STATUS CODE"] = 200;
-                    }
-                    return $Response;
+                    $RequestData['File'] = $Request['payloads']['File'];
+                    $RequestData['Filename'] = $Request['payloads']['Filename'];
+                    $Res = RenameFile($RequestData);
+                    $Response = ReturnResponse($Res);
+                    break;
 
                 default:
-                    return TYPE_NOT_SPECIFIED;
+                    $Response = ReturnResponse(TYPE_NOT_SPECIFIED);
             }
+            return $Response;
+
         }
+        else {
+            $Response = Error_Status(PAYLOAD_MISSING);
+            return $Response;
+        }
+
     }
     else {
-        $Response["SUCCESS"] = "False";
-        $Response["STATUS CODE"] = PAYLOAD_MISSING;
-        $Response["Payloads"] = "Invalid Json";
+        $Response = Error_Status(PAYLOAD_MISSING);
         return $Response;
     }
 

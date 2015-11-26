@@ -25,8 +25,6 @@ $('#Submit').click (function () {
             $("#cont-2-1").removeClass("hide")
             $('#cont-2').addClass("activeLink");
             $("#cont-1-1").addClass("hide");
-            //data = data.replace('[{','{');
-            //data = data.replace('}]','}');
             data = JSON.parse(data);
             data = JSON.stringify(data, undefined, 2)
             $('#cont-2-1').html(data);

@@ -53,8 +53,8 @@ function submit() {
 function setcokie(Token) {
     $.post( "../setToken.php", {"Token":Token})
         .done(function( data ) {
-            //window.location = "../Dashboard/";
-            alert(data);
+            window.location = "../DashBoard/";
+            //alert(data);
         } );
 
 }

@@ -1,6 +1,5 @@
 <?php
 include '../src/lib/login_check.php';
-echo $token;
 ?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -20,7 +19,7 @@ echo $token;
 
 </div>
 <div class="side-menu" id="side-menu">
-    <a href="../Dashboard">DashBoard</a>
+    <a href="">DashBoard</a>
     <a href="../Favourite">MyFav</a>
     <a href="../Recent">Recent</a>
     <a href="../Logout">Logout</a>

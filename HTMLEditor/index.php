@@ -1,6 +1,35 @@
 <?php
 $FileName = uniqid().".html";
 include '../src/lib/login_check.php';
+if(isset($_GET['file']))
+{
+    $filename = "../codebase/".$_GET['file'];
+    if (file_exists($filename)) {
+        $content = file_get_contents($filename);
+        $Varchange = ["<html>","<head>","</head>","</html>","<script>","</script>","<style>","</style>","<body>","</body>"];
+        $datanew = str_replace($Varchange,"--",$content);
+        $DataNow = explode("--",$datanew);
+        $JS = $DataNow[3];
+        $CSS = $DataNow[5];
+        $HTML = $DataNow[8];
+        $FileName = $_GET['file'];
+
+    }
+    else {
+        $content = false;
+        $filename = "";
+        $JS = "";
+        $CSS = "";
+        $HTML = "";
+    }
+}
+else {
+    $content = false;
+    $filename = "";
+    $JS = "";
+    $CSS = "";
+    $HTML = "";
+}
 
 ?>
 <html>
@@ -17,11 +46,13 @@ include '../src/lib/login_check.php';
 <Usertoken id="<?php echo $token; ?>"></Usertoken>
 <div class="header">
     &lt; / &gt; HTML Code Editor
+
     <input type="button" id="show" value="Run Code">
-    <a href="../">Home</a>
+    <a href="../DashBoard/">DashBoard</a>
+    <a href="../Recent">Recent</a>
+    <a href="../Favourite">Favourite</a>
     <a href="../Colors" title="Show Colors">Colors</a>
     <a href="../PHPEditor">PHP Editor </a>
-    <a href="../PythonEditor">Python Editor </a>
 </div>
 
 <div class="DisplayBody">
@@ -39,23 +70,23 @@ include '../src/lib/login_check.php';
 HTML code ....
 <html><body></body></html> is already added ,
 Just Put Up Your Content Over Here
-        "></textarea>
+        "><?php echo $HTML; ?></textarea>
 
         <textarea class="Content" id="CSSContent" placeholder="
 CSS Script Here.....
 This Will Be Added To Your Main File HTML
-        "></textarea>
+        "><?php echo $CSS; ?></textarea>
 
         <textarea class="Content" id="JSContent" placeholder="
 JavaScript Script Here.....
 This Will Be Added To Your Main File HTML"
-        ></textarea>
+        ><?php echo $JS; ?></textarea>
 
 
     </div>
 
 
-    <iframe cols="40%" class="displayresult" id="displayresult" style=""></iframe>
+    <iframe cols="40%" class="displayresult" id="displayresult" style="" src="<?php echo $filename; ?>"></iframe>
 
 </div>
 <script src="editorDesign.js"></script>

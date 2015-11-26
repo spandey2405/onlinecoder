@@ -14,9 +14,17 @@ if($_POST) {
     print (json_encode($response));
 }
 else if ($_GET) {
-    $Response['Status'] = 401;
-    $Response['Success'] = "False";
-    $Response['Message'] = "Method Get Not Allowed";
+    include '../GetMethods/lib/fileview.php';
+    if($_GET['Token']){
+        $Response['Payloads'] = GetMthodFileView($_GET);
+    }
+    else {
+        $Response['Message'] = "You Are Not Authorized To Use The Api";
+        $Response['Status'] = 401;
+        $Response['Success'] = "False";
+    }
+
+
     print (json_encode($Response));
 }
 

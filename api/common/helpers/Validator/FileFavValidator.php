@@ -7,7 +7,7 @@
  */
 function FileFavRequestValidator($Payloads) {
 
-    if(!$Payloads ['Token'] || !$Payloads ['File'] || !$Payloads ['Fav']) {
+    if(!$Payloads ['Token'] || !$Payloads ['File']) {
         Return "False" ;
     }
     return "True";

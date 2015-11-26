@@ -1,7 +1,7 @@
 <?php
 //$cookie_name = "OnlineCoder";
 //if(isset($_COOKIE[$cookie_name])) {
-//    header("location:../Dashboard/");
+//    header("location:../DashBoard/");
 //}
 //
 $cookie_name = "OnlineCoder";
@@ -9,7 +9,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 
 }
 else {
-    header("location:../Dashboard/");
+    header("location:../DashBoard/");
 }
 ?>
 <html>

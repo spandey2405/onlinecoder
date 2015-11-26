@@ -58,14 +58,16 @@ function HandleFileRequest($Request) {
 
         }
         else {
-            $Response = Error_Status(PAYLOAD_MISSING);
+            $Response = ReturnResponse(PAYLOAD_MISSING);
+            $Response['info'] = "Could Not Get User";
             return $Response;
         }
 
     }
     else {
-        $Response = Error_Status(PAYLOAD_MISSING);
-        return $Response;
+        $Response = ReturnResponse(PAYLOAD_MISSING);
+        $Response['info'] = "Data verification failed";
+        return $Request;
     }
 
 }

@@ -27,3 +27,9 @@ $("#show").click(function() {
             //alert(data1);
         });
 });
+$(document).keydown(function (e) {
+
+    if (e.ctrlKey && e.keyCode == 13) {
+        $( "#show" ).click();
+    }
+});

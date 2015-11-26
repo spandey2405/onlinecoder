@@ -51,7 +51,7 @@ else {
     <a href="../DashBoard/">DashBoard</a>
     <a href="../Recent">Recent</a>
     <a href="../Favourite">Favourite</a>
-    <a href="../Colors" title="Show Colors">Colors</a>
+    <a href="http://onlinecoder.in/colors.php" target="_blank" title="Show Colors">Color </a>
     <a href="../PHPEditor">PHP Editor </a>
 </div>
 

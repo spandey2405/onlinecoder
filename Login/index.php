@@ -14,7 +14,7 @@ else {
 ?>
 <html>
 <head>
-    <title>Register</title>
+    <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <link href="../src/css/header.css" rel="stylesheet" type="text/css">
     <link href="../src/css/style.css" rel="stylesheet" type="text/css">

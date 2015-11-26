@@ -16,13 +16,14 @@ include '../src/lib/login_check.php';
 <div class="header">
     < / > OnlineCoder < / >
     <input type="button" id="show" value="Run Code">
-    <a href="../Colors" title="Show Colors">Color </a>
-
+    <a href="http://onlinecoder.in/colors.php" target="_blank" title="Show Colors">Color </a>
 </div>
 <div class="side-menu" id="side-menu">
     <a href="../DashBoard">DashBoard</a>
     <a href="../Favourite">MyFav</a>
     <a href="../Recent">Recent</a>
+    <a href="../PHPEditor">PHP Editor </a>
+    <a href="../HTMLEditor">HTML Editor </a>
     <a href="../Logout">Logout</a>
 </div>
 <div class="mainbody">
@@ -36,7 +37,7 @@ include '../src/lib/login_check.php';
             $Data = json_decode($Data,true);
             $Data = $Data['Payloads'];
             $countFav = 0;
-            if(isset($Data[0])){
+            if($Data != "NoData"){
             foreach($Data as $FileData) {
 
                 $File = $FileData['File'];
@@ -62,15 +63,16 @@ include '../src/lib/login_check.php';
                 echo "<td width='20%' id='Fav' name='$File' class='$triggerFav' style='cursor: pointer;'>$FavText</td>";
             }
             }
+                if ($countFav == 0 ) {
+                    echo "<tr> <td>No Files Marked As Favourite</td></tr>";
+                }
 
             }
 
             else {
                 echo "<tr> <td>No Files Marked As Favourite</td></tr>";
             }
-            if ($countFav == 0 ) {
-                echo "<tr> <td>No Files Marked As Favourite</td></tr>";
-            }
+
             ?>
 
         </table>

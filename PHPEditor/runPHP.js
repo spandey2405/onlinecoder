@@ -28,7 +28,11 @@ $("#show").click(function() {
         });
 });
 $(document).keydown(function (e) {
-
+    if (e.ctrlKey && e.keyCode == 13) {
+        $( "#show" ).click();
+    }
+});
+$('#PHPContent').keydown(function (e) {
     if (e.ctrlKey && e.keyCode == 13) {
         $( "#show" ).click();
     }

@@ -37,3 +37,8 @@ $(document).keydown(function (e) {
         $( "#show" ).click();
     }
 });
+$('#HTMLContent').keydown(function (e) {
+    if (e.ctrlKey && e.keyCode == 13) {
+        $( "#show" ).click();
+    }
+});

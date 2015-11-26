@@ -12,7 +12,7 @@ function GetMthodFileView($Data) {
     $UserDetail = GetUser($Data);
     $Response = GetFile($UserDetail[0]['Username']);
     if ($Response["STATUS CODE"] == 903) {
-        return "Authorization Unsuccessful";
+        return "NoData";
     }
     return $Response['Payloads'];
 }

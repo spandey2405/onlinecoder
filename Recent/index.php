@@ -34,7 +34,7 @@ include '../src/lib/login_check.php';
         <table>
             <?php
             include '../src/lib/login_check.php';
-            $Data = file_get_contents("http://localhost/onlinecoder/api/views/fileview.php?Token=".$token);
+            $Data = file_get_contents("http://developer.onlinecoder.in/api/views/fileview.php?Token=".$token);
             $Data = json_decode($Data,true);
             $Data = $Data['Payloads'];
 

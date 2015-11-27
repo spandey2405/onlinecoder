@@ -7,10 +7,10 @@
  */
 
 function db_configration() {
-    $conf['servername'] = "localhost";
-    $conf['username']   = "root";
-    $conf['password']   = "Siddyking";
-    $conf['dbname']     = "coderin";
+    $conf['servername'] = "Server Name";
+    $conf['username']   = "Username";
+    $conf['password']   = "Password";
+    $conf['dbname']     = "DataBase";
     return $conf;
 }
 

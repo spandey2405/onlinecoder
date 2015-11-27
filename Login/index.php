@@ -42,7 +42,8 @@ else {
         <input type="password" class="register-input" Name="Password" id="Password" placeholder="Password">
 
         <input type="button" value="Login" class="register-button" id="Submit">
-
+        <br> Dont Have An Account ?
+        <input type="button" value="Register" class="register-button" onclick="location.href='../Signup'">
         <script src="validatorSignin.js"></script>
 </form>
 </div>

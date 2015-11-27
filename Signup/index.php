@@ -24,11 +24,10 @@ else {
 <body>
 <div class="header">
     &lt; &gt; HTML Code Editor
-    <input type="button" id="show" value="Run Code">
-    <a href="../Colors" title="Show Colors">Color </a>
-    <a href="../HTML Editor">PHP Editor </a>
-    <a href="../PHPEditor">PHP Editor </a>
-    <a href="../PythonEditor">Python Editor </a>
+    <a href="http://onlinecoder.in/Colors" title="Show Colors">Color </a>
+    <a href="http://onlinecoder.in/HTML Editor">PHP Editor </a>
+    <a href="http://onlinecoder.in/PHPEditor">PHP Editor </a>
+    <a href="http://onlinecoder.in/PythonEditor">Python Editor </a>
 
 </div>
 <h1 class="register-title" id="register-title">Welcome</h1>

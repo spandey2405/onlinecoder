@@ -1,0 +1,42 @@
+body {
+    margin:0;
+    padding:0;
+}
+.header {
+    font-family: 'Inconsolata';
+    font-size: 20px;
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    padding-left: 5%;
+    padding-right: 15%;
+    background: #4679bd;
+    color:white;
+    overflow: hidden;
+}
+.run {
+    font-size: 14px;
+    font-family: 'Arial';
+    padding: 20px;
+    color:white;
+    text-decoration:none;
+    padding-left:20px;
+    border-right:None;
+    background: #4072b4;
+    margin-left: 50px;
+
+}
+.header a {
+    font-size: 14px;
+    font-family: 'Arial';
+    padding: 20px;
+    color:white;
+    text-decoration:none;
+    padding-left:20px;
+    background: #4072b4;
+    margin-right:1px;
+
+}
+.header a:hover {
+    background: #4679bd;
+}

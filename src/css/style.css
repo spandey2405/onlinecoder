@@ -1,0 +1,9 @@
+body {
+    margin:0;
+    padding:0;
+    font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #404040;
+}
+.ActiveFav {
+    color:darkgreen;
+}

@@ -1,0 +1,74 @@
+.side-menu {
+    width:150px;
+    color:black;
+    background:#32373e;
+    overflow:hidden;
+    background: url('../images/content_bg.png') ;
+    float:left;
+}
+.side-menu a {
+    padding:15px;
+    display:block;
+    width:130px;
+    height:20px;
+    margin-bottom: 1px;
+    background: url('../images/content_bg.png');
+    color:white;
+    font-family: Verdana, Geneva, sans-serif;
+    text-decoration: none;
+    font-size:14px;
+}
+.side-menu a:hover {
+    background:#32373e;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.mainbody {
+    width:900px;
+    float:left;
+    margin:0;
+    margin-left:20px;
+
+}
+.mainbody a {
+text-decoration: none;
+    color:grey;
+}
+h1 {
+    font-size:20px;
+    font-family: "Liberation Sans Narrow";
+
+    display: block;
+    color:grey;
+}h2 {
+     font-size:16px;
+     font-family: "Liberation Sans Narrow";
+
+     text-indent: 30px;
+     display: block;
+     color:grey;
+    float:right;
+    margin-right: 20%;
+ }
+
+table {
+    float: none;
+    width:800px;
+    border: 1px solid #cdcdcd;
+    color:grey;
+    font-family: Arial;
+    margin:10px;
+
+}
+table tr td {
+
+    border: 1px solid #cdcdcd;
+    height:20px;
+    font-family: Arial;
+    text-indent: 20px;
+    font-size: 12px;
+    background:linear-gradient(to bottom, #fafafa 0%,#efefef 100%);
+}
+
+table tr td:hover {
+    background:linear-gradient(to bottom, #D8D8D8 30%,#A4A4A4 100%);
+}

@@ -6,12 +6,7 @@ if(isset($_GET['file']))
     $filename = "../codebase/".$_GET['file'];
     if (file_exists($filename)) {
         $content = file_get_contents($filename);
-        $Varchange = ["<html>","<head>","</head>","</html>","<script>","</script>","<style>","</style>","<body>","</body>"];
-        $datanew = str_replace($Varchange,"--",$content);
-        $DataNow = explode("--",$datanew);
-        $JS = $DataNow[3];
-        $CSS = $DataNow[5];
-        $HTML = $DataNow[8];
+        $HTML = $content;
         $FileName = $_GET['file'];
 
     }

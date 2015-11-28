@@ -25,7 +25,7 @@ else {
 <div class="header">
     &lt; &gt; HTML Code Editor
     <a href="http://onlinecoder.in/Colors" title="Show Colors">Color </a>
-    <a href="http://onlinecoder.in/HTML Editor">PHP Editor </a>
+    <a href="http://onlinecoder.in/HTMLEditor">PHP Editor </a>
     <a href="http://onlinecoder.in/PHPEditor">PHP Editor </a>
     <a href="http://onlinecoder.in/PythonEditor">Python Editor </a>
 

@@ -30,10 +30,12 @@ include '../src/lib/login_check.php';
 
     <h1>Favourite Files</h1>
     <center>
+        <div class="ListFiles">
         <table>
             <?php
             include '../src/lib/login_check.php';
-            $Data = file_get_contents("http://developers.onlinecoder.in/api/views/fileview.php?Token=".$token);
+            $BASE_API = explode('Favourite',"http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'])[0];
+            $Data = file_get_contents($BASE_API."api/views/fileview.php?Token=".$token);
             $Data = json_decode($Data,true);
             $Data = $Data['Payloads'];
             $countFav = 0;
@@ -76,6 +78,7 @@ include '../src/lib/login_check.php';
             ?>
 
         </table>
+            <div class="ListFiles">
     </center>
 </div>
 <script src="../src/lib/sidebar.js" type="text/javascript"></script>

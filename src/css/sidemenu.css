@@ -50,7 +50,7 @@ h1 {
     margin-right: 20%;
  }
 
-table {
+.ListFiles table {
     float: none;
     width:800px;
     border: 1px solid #cdcdcd;
@@ -59,7 +59,7 @@ table {
     margin:10px;
 
 }
-table tr td {
+.ListFiles table tr td {
 
     border: 1px solid #cdcdcd;
     height:20px;
@@ -69,6 +69,6 @@ table tr td {
     background:linear-gradient(to bottom, #fafafa 0%,#efefef 100%);
 }
 
-table tr td:hover {
+.ListFiles table tr td:hover {
     background:linear-gradient(to bottom, #D8D8D8 30%,#A4A4A4 100%);
 }

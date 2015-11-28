@@ -21,8 +21,8 @@ $myfile = fopen($file, "w") or die("Unable to open file!");
 
 $code = "<html>\n<head>\n".
     "<script>\n$jscode\n</script>\n".
-    "<style>\n$csscode\n</style>\n</head>\n".
-    "<body>\n$htmlcode\n</body>\n</html>";
+    "</head>\n".
+    "<body>\n$htmlcode\n</body>\n<style>\n$csscode\n</style>\n</html>";
 
 fwrite($myfile, $code);
 fclose($myfile);

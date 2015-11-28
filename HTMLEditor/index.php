@@ -30,30 +30,21 @@ else {
     $CSS = "";
     $HTML = "";
 }
-
+include '../src/Template/header.php';
 ?>
 <html>
 <head>
     <title>
         HTML Editor
     </title>
+    <link href="../src/Template/css/header.css" rel="stylesheet" type="text/css">
     <link href="../src/css/editor.css" rel="stylesheet" type="text/css">
     <script src="../src/js/jquery-1.10.2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <Usertoken id="<?php echo $token; ?>"></Usertoken>
-<div class="header">
-    &lt; / &gt; HTML Code Editor
-
-    <input type="button" id="show" value="Run Code">
-    <a href="../DashBoard/">DashBoard</a>
-    <a href="../Recent">Recent</a>
-    <a href="../Favourite">Favourite</a>
-    <a href="http://onlinecoder.in/colors.php" target="_blank" title="Show Colors">Color </a>
-    <a href="../PHPEditor">PHP Editor </a>
-</div>
+<?php DisplayHeader() ?>
 
 <div class="DisplayBody">
 

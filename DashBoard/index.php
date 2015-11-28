@@ -1,23 +1,17 @@
 <?php
 include '../src/lib/login_check.php';
+include '../src/Template/header.php';
 ?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
-    <link href="../src/css/header.css" rel="stylesheet" type="text/css">
-    <link href="../src/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../src/Template/css/header.css" rel="stylesheet" type="text/css">
     <link href="../src/css/sidemenu.css" rel="stylesheet" type="text/css">
     <script src="../src/js/jquery-1.10.2.js" type="text/javascript"></script>
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="header">
-    < / > OnlineCoder < / >
-    <input type="button" id="show" value="Run Code">
-    <a href="../Colors" title="Show Colors">Color </a>
-
-</div>
+<?php DisplayHeader('Dashboard') ?>
 <div class="side-menu" id="side-menu">
     <a href="">DashBoard</a>
     <a href="../Favourite">MyFav</a>

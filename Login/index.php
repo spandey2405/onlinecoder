@@ -11,25 +11,17 @@ if(!isset($_COOKIE[$cookie_name])) {
 else {
     header("location:../DashBoard/");
 }
+include '../src/Template/header.php';
 ?>
 <html>
 <head>
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-    <link href="../src/css/header.css" rel="stylesheet" type="text/css">
-    <link href="../src/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../src/Template/css/header.css" rel="stylesheet" type="text/css">
     <link href="../src/css/register.css" rel="stylesheet" type="text/css">
     <script src="../src/js/jquery-1.10.2.js"></script>
 </head>
 <body>
-<div class="header">
-    &lt; &gt; HTML Code Editor
-    <a href="http://onlinecoder.in/Colors" title="Show Colors">Color </a>
-    <a href="http://onlinecoder.in/HTMLEditor">HTML Editor </a>
-    <a href="http://onlinecoder.in/PHPEditor">PHP Editor </a>
-    <a href="http://onlinecoder.in/PythonEditor">Python Editor </a>
-
-</div>
+<?php DisplayHeader('Sign-in') ?>
 <h1 class="register-title" id="register-title">Welcome</h1>
 <div class="register" id="register">
     <div class="status" id="status"></div>

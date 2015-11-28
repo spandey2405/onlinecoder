@@ -8,6 +8,12 @@ $( document ).ready(function() {
     $('#codeEditor').css('height',EHeight);
     $('#displayresult').css('height',EHeight);
     $('.Content').css('height',EHeight-TabHeight);
+
+    // Target all classed with ".lined"
+    $(".Content").linedtextarea(
+        {selectedLine: 1}
+    );
+
 });
 
 $('.tabLink').click( function () {

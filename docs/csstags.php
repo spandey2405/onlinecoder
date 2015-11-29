@@ -101,37 +101,3 @@ $CSStags = array(
     "z-index" => "auto inherit ");
 
 ?>
-<html>
-<head>
-    <style>
-        table {
-            display: table;
-            border-collapse: separate;
-            border-spacing: 2px;
-            border-color: grey;
-        }
-        table tr td {
-            border: 1px solid #cdcdcd;
-            font-family: Arial;
-            padding:5px;
-            font-size: 12px;
-            background: linear-gradient(to bottom, #fafafa 0%,#efefef 100%);
-        }
-    </style>
-</head>
-<body>
-<table>
-    <?php
-
-    foreach ($CSStags as $tag=>$value) {
-        print "<tr width='100%'>";
-        print "<td width='20%' valign='top' style='cursor: pointer;'>".
-            $tag.
-            "</td><td width='80%'>".$value."</td>";
-        print "</tr>";
-    }
-
-    ?>
-</table>
-</body>
-</html>

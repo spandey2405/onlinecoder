@@ -2,7 +2,7 @@
 
 function DisplayHeader($Page = 'None') {
 
-    $Editor = '<a href="" id="show"><li><b>{</b> Run <b>:</b> Code <b>}</b></li></a>
+    $Editor = '<a href="javascript:;" id="show"><li><b>{</b> Run <b>:</b> Code <b>}</b></li></a>
                 <a href=\'../DashBoard\'><li>Dashboard</li></a>';
     $General = '<a href="../FAQ"><li><b>{</b> FAQ <b>}</b></li></a>';
 //    $Page = strtolower($Page);

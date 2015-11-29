@@ -3,16 +3,13 @@
  */
 $( document ).ready(function() {
     var height = $(document).height();
-    var EHeight = height - 110;
+    var EHeight = height - 120;
     var TabHeight = $("#tabarea").height();
     $('#codeEditor').css('height',EHeight);
     $('#displayresult').css('height',EHeight);
+    $('#Result').css('height',EHeight);
     $('.Content').css('height',EHeight-TabHeight);
-
-    // Target all classed with ".lined"
-    $(".Content").linedtextarea(
-        {selectedLine: 1}
-    );
+    $('.Content1').css('height',EHeight-TabHeight-20);
 
 });
 
@@ -34,3 +31,24 @@ $('.tabLink').click( function () {
 
 });
 
+$('.tabLink1').click( function () {
+    $('#Result').removeClass('display');
+    $('#CSSTags').removeClass('display');
+    $('#HTMLTags').removeClass('display');
+    $('#colors').removeClass('display');
+    $('#JSTags').removeClass('display');
+
+    $('#ResultTab').removeClass('activeLink');
+    $('#CSStagTab').removeClass('activeLink');
+    $('#HTMltagTab').removeClass('activeLink');
+    $('#colorsTab').removeClass('activeLink');
+    $('#JStagTab').removeClass('activeLink');
+
+    var currentContent = $(this).attr('name');
+    var currentTab = $(this).attr('id');
+
+    $("#"+currentContent).addClass("display");
+    $("#"+currentTab).addClass("activeLink");
+
+
+});

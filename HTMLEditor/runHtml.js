@@ -2,6 +2,7 @@
  * Created by sp on 26/11/15.
  */
 $("#show").click(function() {
+    $("#Result").click();
     var CodeHtml = $("#HTMLContent").val();
     var CodeCSS = $("#CSSContent").val();
     var CodeJS = $("#JSContent").val();
@@ -10,7 +11,8 @@ $("#show").click(function() {
     $.post( "../src/lib/htmlhandler.php",
         { File: filename , HTML: CodeHtml, CSS: CodeCSS, JS: CodeJS })
         .done(function( data ) {
-        $("#displayresult").attr("src", data);
+        $("#Result").attr("src", data);
+        $('#ResultTab').click();
 
     });
 
